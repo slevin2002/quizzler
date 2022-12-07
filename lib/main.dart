@@ -128,7 +128,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Row(
           children: scoreKeeper,
-        )
+        ),
         //To check github
       ],
     );
