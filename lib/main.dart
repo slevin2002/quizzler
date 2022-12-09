@@ -21,33 +21,36 @@ class Quizzler extends StatelessWidget {
 }
 
 class QuizPage extends StatefulWidget {
+
   @override
   _QuizPageState createState() => _QuizPageState();
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<Icon> scoreKeeper = [
-            Icon(
+  
+   List<Icon> scoreKeeper =[
+    Icon(
               Icons.check,
               color: Colors.green,
-            ),
-            Icon(
-              Icons.close,
+             ),
+             Icon(
+               Icons.close,
               color: Colors.red,
-            ),
-            Icon(
-              Icons.close,
+             ),
+             Icon(
+               Icons.close,
               color: Colors.red,
-            ),
-            Icon(
-              Icons.close,
+             ),
+             Icon(
+               Icons.close,
               color: Colors.red,
-            ),
-            Icon(
-              Icons.close,
+             ),
+             Icon(
+               Icons.close,
               color: Colors.red,
-            ),          
-  ];
+             ),
+        ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -75,7 +78,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(15.0),
             child: TextButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.green)),
+              backgroundColor: MaterialStatePropertyAll(Colors.green)),
               child: Text(
                 'True',
                 style: TextStyle(
@@ -83,14 +86,15 @@ class _QuizPageState extends State<QuizPage> {
                   fontSize: 20.0,
                 ),
               ),
+              
               onPressed: () {
                 //The user picked true.
                 setState(() {
-                  scoreKeeper.add(Icon(
-                    Icons.check,color: Colors.green,),
-                    );
+                scoreKeeper.add(
+                  Icon(Icons.check,color: Colors.red,),
+                );  
                 });
-              },
+                },
             ),
           ),
         ),
@@ -98,34 +102,26 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.red)),
-              child: Text(
+             style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Colors.red)), 
+             child: Text(
                 'False',
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.white,
                 ),
               ),
+
               onPressed: () {
                 //The user picked false.
-                setState(() {
-                  scoreKeeper.add(Icon(
-                    Icons.close,color: Colors.red,),
-                    );
-                });
               },
             ),
           ),
         ),
         Row(
-          children:scoreKeeper,
-        ),
-         // To check github  
-          // To check github 
-          //add line 
-          //new line added 
-      ],
+        children: scoreKeeper,
+       ),
+       ], 
     );
   }
 }
